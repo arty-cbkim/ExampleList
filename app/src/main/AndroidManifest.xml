@@ -12,10 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ExampleList">
         <activity
+            android:name=".multiImagerecyclerview.MultiImageRecyclerActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".multiImagerecyclerview.MultiImageRecyclerActivity"
+            android:name=".layout.LayoutActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
