@@ -74,26 +74,32 @@ public class ChartActivity extends AppCompatActivity {
 
             switch (position) {
                 case 1:
-                    entries.add(
-                            new Entry( i++, Float.parseFloat(sensor.getTemp()) )
-                    );
+                    entries.add( new Entry( i++, Float.parseFloat(sensor.getTemp()) ) );
                     break;
                 case 2:
-                    entries.add(
-                            new Entry( i++, Float.parseFloat(sensor.getHum()) )
-                    );
+                    entries.add( new Entry( i++, Float.parseFloat(sensor.getHum()) ) );
                     break;
                 case 3:
-                    entries.add(
-                            new Entry( i++, Float.parseFloat(sensor.getCds()) )
-                    );
+                    entries.add( new Entry( i++, Float.parseFloat(sensor.getCds()) ) );
                     break;
             }
 
             xVals.add(sensor.getTime());
         }
+        String title = null;
+        switch (position) {
+            case 1:
+                title = "온도";
+                break;
+            case 2:
+                title = "습도";
+                break;
+            case 3:
+                title = "조도";
+                break;
+        }
 
-        LineDataSet lineDataSet = new LineDataSet(entries, "온도");
+        LineDataSet lineDataSet = new LineDataSet(entries, title);
         lineDataSet.setLineWidth(3);
         lineDataSet.setCircleRadius(3); // 점 크기
         lineDataSet.setDrawCircleHole(true);
